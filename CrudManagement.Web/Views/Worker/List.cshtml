@@ -1,0 +1,35 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model List<CrudManagement.Web.Models.Entities.Worker>
+
+<h1>Workers</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var worker in Model)
+        {
+            <tr>
+                <td>@worker.Id</td>
+                <td>@worker.Name</td>
+                <td>@worker.Email</td>
+                <td>@worker.Phone</td>
+                <td>
+                    <a class="btn btn-primary" asp-controller="Worker" asp-action="Edit" asp-route-id="@worker.Id">Edit</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
